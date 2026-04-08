@@ -77,40 +77,77 @@ building = cmds.polyCube(
 # Raise the building so its base sits on the ground plane.
 cmds.move(building_x, building_height / 2.0, building_z, building)
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 2
-# Create a second object using a DIFFERENT primitive type than the cube above.
-# Remember to:
-#   - Use descriptive variable names for size and position.
-#   - Name the object meaningfully with the 'name' parameter or cmds.rename().
-#   - Position it so it sits on the ground (not floating or buried).
-# ---------------------------------------------------------------------------
+#building_width = 3
+building_height = 6
+building_depth = 9
+building_x = -7
+building_z = 8
+
+building = cmds.polyCube(
+    name="building_01",
+    width=building_width,
+    height=building_height,
+    depth=building_depth,
+)
+    
+cmds.move(building_x, building_height / 2.0, building_z, building)
 
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 3
-# ---------------------------------------------------------------------------
+tree_radius = 2
+tree_height = 3
+tree_x = -3
+tree_z = 5
+
+tree = cmds.polyCone(
+    name="tree_01",
+    radius=tree_radius,
+    height=tree_height,
+)
+    
+cmds.move(tree_x, tree_height / 2.0, tree_z, tree)
 
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 4
-# ---------------------------------------------------------------------------
+building_width = 1
+building_height = 9
+building_depth = 3
+building_x = 12
+building_z = 10
+
+building = cmds.polyCube(
+    name="building_02",
+    width=building_width,
+    height=building_height,
+    depth=building_depth,
+)
+    
+cmds.move(building_x, building_height / 2.0, building_z, building)
 
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 5
-# ---------------------------------------------------------------------------
+tree_radius = 2
+tree_height = 1
+tree_x = -10
+tree_z = 21
 
+tree = cmds.polyCone(
+    name="tree_02",
+    radius=tree_radius,
+    height=tree_height,
+)
+    
+cmds.move(tree_x, tree_height / 2.0, tree_z, tree)
 
-# ---------------------------------------------------------------------------
-# TODO (Optional): Add more objects to make your scene more interesting!
-# Consider: trees, lamp posts, fences, vehicles, animals, etc.
-# ---------------------------------------------------------------------------
+building_radius = 7
+building_height = 15
+building_x = 11
+building_z = -9
 
+building = cmds.polyCylinder(
+    name="building_03",
+    radius=building_radius,
+    height=building_height,
+)
+    
+cmds.move(building_x, building_height / 2.0, building_z, building)
 
-# ---------------------------------------------------------------------------
-# Frame All -- so the whole scene is visible in the viewport.
-# (This is provided for you -- do not remove.)
-# ---------------------------------------------------------------------------
 cmds.viewFit(allObjects=True)
 print("Scene built successfully!")
